@@ -1,10 +1,10 @@
 const express = require("express");
-const cors = require("cors"); // ✅ CORS eklendi
+const cors = require("cors"); 
 const app = express();
 const productRoutes = require("./routes/productRoutes");
 
 
-app.use(cors()); // ✅ CORS aktif edildi
+app.use(cors()); 
 app.use(express.json());
 app.use("/products", productRoutes);
 
