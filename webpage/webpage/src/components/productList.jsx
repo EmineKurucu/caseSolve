@@ -11,7 +11,10 @@ const ProductList = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/products', {
+        // API URL'yi .env'den alıyoruz
+        const baseURL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
+        const response = await axios.get(`${baseURL}/products`, {
           timeout: 10000,
           headers: { 'Content-Type': 'application/json' }
         });
